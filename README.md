@@ -28,5 +28,9 @@ function load_my_plugin()
 }
 </pre>
 
+@TODO
+- Add as a composer package
+- Possibility to enqueue styles and script outside the class
+
 <h2>Credits</h2>
 This library was adapted from http://www.wpexplorer.com/wordpress-page-templates-plugin/
