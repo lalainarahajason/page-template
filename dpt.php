@@ -19,7 +19,11 @@ require_once DPT_PLUGIN_DIR . '/dynamicPageTemplate.php';
 
 add_action( 'plugins_loaded', 'load_my_plugin' );
 function load_my_plugin()
-{
+{	
+	$templates = array(
+		'/templates/espacepro-template.php' => 'DPT',
+		'/templates/cart-template' => 'CART TEMPLATE'
+	);
     $dpt = new DPT();
-	$dpt->addTemplate('/templates/espacepro-template.php', 'DPT');
+	$dpt->addTemplate($templates);
 }

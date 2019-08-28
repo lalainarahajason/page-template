@@ -62,10 +62,8 @@ class DPT {
 
 	} 
 
-	public function addTemplate($file, $name){
-		$this->templates = array(
-			$file => $name,
-		);
+	public function addTemplate($templates){
+		$this->templates = '/templates/espacepro-template.php';
 	}
 
 	/**
