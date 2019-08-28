@@ -22,7 +22,7 @@ function load_my_plugin()
 {	
 	$templates = array(
 		'/templates/espacepro-template.php' => 'DPT',
-		'/templates/cart-template' => 'CART TEMPLATE'
+		'/templates/my_another_template.php' => 'CART TEMPLATE'
 	);
     $dpt = new DPT();
 	$dpt->addTemplate($templates);
