@@ -14,7 +14,6 @@ require_once DPT_PLUGIN_DIR . '/dynamicPageTemplate.php';
 /**
 * Load the class from the plugins_loaded hook which is called once any activated plugins have been loaded.
 * The addTemplate method accepts a template array where keys are templates path and values templates name
-* NOTE : if you don't create 
 */ 
 add_action( 'plugins_loaded', 'load_my_plugin' );
 function load_my_plugin()
@@ -25,6 +24,20 @@ function load_my_plugin()
 	);
 	$dpt = new DPT(); 
 	$dpt->addTemplate($templates);
+}
+</pre>
+
+You can enqueue scripts for a specific template name
+<pre>
+add_action('wp', [$this, 'new_template_scripts'] );
+function new_template_scripts() {
+	if ( is_page_template( "templates/espacepro-template.php" ) ) {
+		add_action( 'wp_enqueue_scripts', array($this, 'add_template_scripts' ) );
+	}
+}
+function add_template_scripts() {
+	wp_register_script( 'dpt_script', plugin_dir_url( __FILE__ )  . 'dpt.js', 'jquery', '1.0' );
+	wp_enqueue_script( 'dpt_script' );
 }
 </pre>
 
