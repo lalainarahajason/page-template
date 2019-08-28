@@ -14,7 +14,7 @@ class DPT {
 
 	/**
 	 * Returns an instance of this class. 
-	
+	*/
 	public static function get_instance() {
 
 		if ( null == self::$instance ) {
@@ -23,7 +23,7 @@ class DPT {
 
 		return self::$instance;
 
-	}  */
+	}
 
 	/**
 	 * Initializes the plugin by setting filters and administration functions.
